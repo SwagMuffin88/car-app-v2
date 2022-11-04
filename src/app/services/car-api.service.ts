@@ -5,7 +5,7 @@ import {Car} from "../models/car.model";
   providedIn: 'root'
 })
 export class CarApiService {
-  private apiURL: string = 'https://crudcrud.com/api/bc6604e969954135ba13b78764f71f26';
+  private apiURL: string = 'https://crudcrud.com/api/4893b38f45ab4319b8047ea354fe56bf';
   private carEndPoint: string = '/seller/dashboard/';
   constructor() { }
 
@@ -21,7 +21,6 @@ export class CarApiService {
   }
   public getAllCars(): Promise<Response> {
     return fetch(this.apiURL + this.carEndPoint, {
-      mode: "no-cors",
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +31,6 @@ export class CarApiService {
 
   deleteCar(carName: string): Promise<Response> {
     return fetch(this.apiURL + this.carEndPoint + carName, {
-      mode: "no-cors",
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
