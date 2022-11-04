@@ -1,0 +1,15 @@
+<!--<mat-text-column name="name"></mat-text-column>-->
+<!--<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>-->
+<!--<tr mat-row *matRowDef="let carList; columns: columnsToDisplay"></tr>-->
+
+<li>
+  <div [ngClass]="carItem.isAvailable ? 'available-car' : 'not-available-car' ">
+<!--    <span class="id">{{carItem.id}}</span>     how to automatically generate?-->
+    <span class="name">{{carItem.name}} </span>
+    <span class="price">{{carItem.price + '€'}} </span>
+    <span class="quantity">{{carItem.quantity}}</span>
+    <span>
+      <button class="small-btn danger" (click)="onDeleteCar.emit(carItem.name)">Delete Car</button>
+    </span>
+  </div>
+</li>

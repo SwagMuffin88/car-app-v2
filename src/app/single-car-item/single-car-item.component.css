@@ -1,0 +1,13 @@
+.not-available-car {
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.5;
+}
+.available-car {
+  text-decoration: none;
+}
+.danger {
+  margin: 12px;
+  background: #572626;
+  color: white;
+}

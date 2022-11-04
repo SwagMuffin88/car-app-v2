@@ -1,2 +1,50 @@
-<p>seller-cars works!</p>
+<div class="add-item">
+  <h3>Add a new car</h3>
+  <p>
+    Name:
+  <input autofocus (keyup.enter)="addCar()" [(ngModel)]="newCarName" type="text">
+  </p>
+  <p>
+    Price (€):
+    <input autofocus (keyup.enter)="addCar()" [(ngModel)]="newCarPrice" type="text">
+  </p>
+  <p>
+    Quantity:
+  <input autofocus (keyup.enter)="addCar()" [(ngModel)]="newCarQuantity" type="text">
+  </p>
+  <p>
+    <label>
+      Available?
+      <input type="checkbox" name="Available?" [(ngModel)]="newCarAvailability" />
+      {{newCarAvailability}}
+    </label>
+  </p>
+  <button (click)="addCar()">Add</button>
+</div>
+
+<!--<mat-table [dataSource]="carList">-->
+<!--  <ng-container *ngFor="let car of carList">-->
+<!--&lt;!&ndash;    <app-single-car-item&ndash;&gt;-->
+<!--&lt;!&ndash;      [carItem]="car"&ndash;&gt;-->
+<!--&lt;!&ndash;    >&ndash;&gt;-->
+<!--&lt;!&ndash;    </app-single-car-item>&ndash;&gt;-->
+<!--    <mat-text-column name="name"></mat-text-column>-->
+<!--    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>-->
+<!--    <tr mat-row *matRowDef="let car; columns: columnsToDisplay"></tr>-->
+<!--  </ng-container>-->
+<!--</mat-table>-->
+
+<h2>Added cars (Name, Price, Quant., Availability)</h2>
+<ul class="carList">
+  <li>
+    <ng-container *ngFor="let car of carList">
+      <app-single-car-item
+        [carItem]="car"
+        (onDeleteCar)="deleteCarItem($event)"
+      >
+      </app-single-car-item>
+    </ng-container>
+  </li>
+</ul>
+
 <router-outlet></router-outlet>

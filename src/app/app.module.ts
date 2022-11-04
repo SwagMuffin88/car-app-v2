@@ -6,12 +6,16 @@ import { SellerDashboardComponent } from './seller-dashboard/seller-dashboard.co
 import { BuyerDashboardComponent } from './buyer-dashboard/buyer-dashboard.component';
 import { BuyerCarsComponent } from './buyer-cars/buyer-cars.component';
 import { SellerCarsComponent } from './seller-cars/seller-cars.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
 import {RouterOutlet} from "@angular/router";
 import { AppRoutingModule } from './routing/app-routing.module';
-import { HomePageComponent } from './home-page/home-page.component';
 
 import { RouterModule } from '@angular/router';
 import {CommonModule} from "@angular/common";
+import { SingleCarItemComponent } from './single-car-item/single-car-item.component';
+import {FormsModule} from "@angular/forms";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -21,14 +25,17 @@ import {CommonModule} from "@angular/common";
     BuyerCarsComponent,
     SellerCarsComponent,
     HomePageComponent,
+    SingleCarItemComponent,
   ],
-    imports: [
-        BrowserModule,
-        RouterOutlet,
-        AppRoutingModule,
-        RouterModule,
-        CommonModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterOutlet,
+    AppRoutingModule,
+    RouterModule,
+    CommonModule,
+    FormsModule,
+    MatTableModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
